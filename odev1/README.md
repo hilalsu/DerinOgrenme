@@ -24,3 +24,12 @@ k = 7  | accuracy = 0.2740 (27.40%)
 -----------------------------------
 En iyi sonuc: k = 7 -> accuracy = 0.2740
 ```
+
+## Sonuclarin Yorumlanmasi
+
+- Bu deneyde en iyi sonuc `k=7` ile elde edildi (`%27.40`).
+- `k=1` daha esnek oldugu icin tekil ve gurultulu orneklere daha duyarli kalabilir.
+- `k` arttikca karar siniri daha duzgun hale gelir; burada `k=3` ve `k=5` orta seviyede kalirken
+  `k=7` daha dengeli bir sonuc verdi.
+- CIFAR-10 gibi yuksek boyutlu goruntu verisinde temel KNN'in dogrulugu sinirlidir;
+  ozellik cikarimi veya daha gelismis modellerle performans artirilabilir.
