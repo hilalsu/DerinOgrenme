@@ -40,5 +40,3 @@ Bu çalışmada CIFAR-10 veri seti üzerinde from-scratch K-Nearest Neighbor (KN
 Bu ödevde KNN algoritması temel prensipleriyle uygulanmış, farklı k değerlerinin doğruluk üzerindeki etkisi gözlemlenmiştir. Temel KNN’in CIFAR-10 gibi karmaşık veri setlerinde sınırlı doğruluk sağladığı görülmüştür; ileri seviye özellik çıkarımı veya derin öğrenme tabanlı modellerle performans artırılabilir.
 
 ---
-
-İstersen ben bu raporu **PDF veya görselleştirilmiş tablo ve grafiklerle zenginleştirilmiş bir versiyona** da dönüştürebilirim; böylece k değerlerinin performans farklarını daha net görebilirsin. Bunu yapayım mı?
