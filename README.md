@@ -1,5 +1,3 @@
-## 1) derinogrenme README
-
 # Derin Öğrenme Ders Ödevleri
 
 Bu repo, ders ödevlerini tek bir yerde düzenli şekilde toplamak amacıyla oluşturulmuştur.
