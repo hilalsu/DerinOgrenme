@@ -1,35 +1,44 @@
-# CIFAR-10 KNN Ödevi
+# Odev 1 Raporu - CIFAR-10 KNN
 
-Bu ödevde CIFAR-10 veri seti diskten okunarak K-Nearest Neighbor (KNN) sınıflandırıcısı baştan uygulanmıştır.
+## 1) Amaç
 
-### Çalıştırma
+Bu çalışmada CIFAR-10 veri seti üzerinde from-scratch K-Nearest Neighbor (KNN) sınıflandırıcısı uygulanmıştır. Farklı k değerleri (1, 3, 5, 7) test edilmiş ve performansları karşılaştırılmıştır.
 
-```bash
-python main.py
-```
+## 2) Yöntem
 
-### Örnek Çıktı
+* Veri seti diskten pickle dosyaları (`data_batch_1..5`, `test_batch`) ile okunmuştur.
+* Model **sklearn** kullanılmadan, **numpy** ile sıfırdan yazılmıştır.
+* Uzaklık ölçümü olarak **Öklid mesafesi** kullanılmıştır.
+* Tahmin adımında en yakın **k** komşunun çoğunluk oylaması alınmıştır.
 
-```
-Train shape: (5000, 3072), Labels: (5000,)
-Test  shape: (1000, 3072), Labels: (1000,)
+## 3) Deney Ayarları
 
-KNN Sonuçları (CIFAR-10)
------------------------------------
-k = 1  | accuracy = 0.2680 (26.80%)
-k = 3  | accuracy = 0.2610 (26.10%)
-k = 5  | accuracy = 0.2660 (26.60%)
-k = 7  | accuracy = 0.2740 (27.40%)
------------------------------------
-En iyi sonuç: k = 7 -> accuracy = 0.2740
-```
+* Train alt-küme: 5000
+* Test alt-küme: 1000
+* Test edilen k değerleri: 1, 3, 5, 7
 
-### Sonuçların Yorumlanması
+## 4) Sonuçlar
 
-* En iyi doğruluk `k=7` ile elde edilmiştir (%27.40).
-* `k=1` daha esnek olup tekil ve gürültülü örneklere duyarlıdır.
-* `k` arttıkça karar sınırı daha düzgün hale gelir.
+| k | Accuracy        |
+| - | --------------- |
+| 1 | 0.2680 (26.80%) |
+| 3 | 0.2610 (26.10%) |
+| 5 | 0.2660 (26.60%) |
+| 7 | 0.2740 (27.40%) |
+
+**En iyi sonuç:** k = 7 → accuracy = 0.2740
+
+## 5) Analiz
+
+* Küçük k değeri genelde daha esnek ancak gürültüye daha duyarlıdır.
+* Büyük k değeri daha düzgün karar sınırı çizer fakat aşırı genelleme yapabilir.
 * CIFAR-10 gibi yüksek boyutlu görüntü verilerinde temel KNN’in doğruluğu sınırlıdır; özellik çıkarımı veya daha gelişmiş modellerle performans artırılabilir.
+* Deney sonuçlarına göre en iyi doğruluk **k=7** ile elde edilmiştir (%27.40).
+
+## 6) Sonuç
+
+Bu ödevde KNN algoritması temel prensipleriyle uygulanmış, farklı k değerlerinin doğruluk üzerindeki etkisi gözlemlenmiştir. Temel KNN’in CIFAR-10 gibi karmaşık veri setlerinde sınırlı doğruluk sağladığı görülmüştür; ileri seviye özellik çıkarımı veya derin öğrenme tabanlı modellerle performans artırılabilir.
 
 ---
 
+İstersen ben bu raporu **PDF veya görselleştirilmiş tablo ve grafiklerle zenginleştirilmiş bir versiyona** da dönüştürebilirim; böylece k değerlerinin performans farklarını daha net görebilirsin. Bunu yapayım mı?
